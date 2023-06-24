@@ -28,8 +28,8 @@ Check out the live demo of the CO2 Emissions Dashboard: [CO2 Emissions Dashboard
 
 3.Install the required dependencies:
 
-    ```shell
-    pip install -r requirements.txt
+   ```shell
+   pip install -r requirements.txt
 4.Run the Streamlit app locally with the following command:
     ```shell
     streamlit run main.py
