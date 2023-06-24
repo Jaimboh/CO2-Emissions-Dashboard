@@ -83,7 +83,7 @@ with st.sidebar:
         ('World Map', 'Continent Emissions', 'Comparing continents')
     )
 
-st.title("A Simple CO2 Emissions Dashboard")
+
 st.info("An example of a Streamlit layout using columns")
 
 with st.container():
