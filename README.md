@@ -27,7 +27,6 @@ Check out the live demo of the CO2 Emissions Dashboard: [CO2 Emissions Dashboard
    cd your-repo-name
 
 3.Install the required dependencies:
-
     ```shell
     pip install -r requirements.txt
    
