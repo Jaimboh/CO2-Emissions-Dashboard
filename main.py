@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 st.set_page_config(layout="wide")
-
+st.title("A Simple CO2 Emissions Dashboard")
 @st.cache_data
 def get_countries_data(): 
     url = "https://github.com/alanjones2/CO2/raw/master/data/countries_df.csv"
@@ -73,7 +73,7 @@ elif chart == 'Comparing continents':
 
 
 
-st.title("A Simple CO2 Emissions Dashboard")
+
 st.write("An example of a Streamlit layout using a sidebar")
 
 with st.sidebar:
