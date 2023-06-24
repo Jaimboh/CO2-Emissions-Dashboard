@@ -60,7 +60,8 @@ fig3 = px.bar(df, "Year", "Annual CO₂ emissions", color="Entity", barmode='gro
 
 chart = st.radio(
     "Select the chart that you would like to display",
-    ('World Map', 'Continent Emissions', 'Comparing continents')
+    ('World Map', 'Continent Emissions', 'Comparing continents'),
+    key="chart_selection"
 )
 
 if chart == 'World Map':
