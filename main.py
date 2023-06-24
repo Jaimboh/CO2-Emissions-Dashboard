@@ -50,12 +50,12 @@ st.write('You selected months between', start_month, 'and', end_month)
 
 continents = df_continents['Entity'].unique()
 selected_continent = st.selectbox('Select country or group', continents)
-df = df_continents.loc[df_continents['Entity'].isin(selected_continent)]
+df = df_continents[df_continents['Entity'] == selected_continent]
 fig2 = px.line(df, "Year", "Annual CO₂ emissions")
 
 selected_continents = st.multiselect('Select country or group', continents, continents)
 df = df_continents[df_continents['Year'] >= 2010]
-df = df[df_continents['Entity'].isin(selected_continents)]
+df = df_continents.loc[df_continents['Entity'].isin(selected_continents)]
 fig3 = px.bar(df, "Year", "Annual CO₂ emissions", color="Entity", barmode='group')
 
 chart = st.radio(
