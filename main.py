@@ -3,22 +3,24 @@ import plotly.express as px
 import pandas as pd
 import numpy as np
 
-@st.cache
+st.set_page_config(layout="wide")
+
+@st.cache_data
 def get_countries_data(): 
     url = "https://github.com/alanjones2/CO2/raw/master/data/countries_df.csv"
     return pd.read_csv(url)
 
-@st.cache
+@st.cache_data
 def get_continent_data():
     url = 'https://github.com/alanjones2/CO2/raw/master/data/continents_df.csv'
     return pd.read_csv(url)
 
-@st.cache
+@st.cache_data
 def get_world_data():
     url = 'https://github.com/alanjones2/CO2/raw/master/data/world_df.csv'
     return pd.read_csv(url)
 
-@st.cache
+@st.cache_data
 def get_group_data():
     url = 'https://github.com/alanjones2/CO2/raw/master/data/income_types_df.csv'
     return pd.read_csv(url)
@@ -48,7 +50,7 @@ st.write('You selected months between', start_month, 'and', end_month)
 
 continents = df_continents['Entity'].unique()
 selected_continent = st.selectbox('Select country or group', continents)
-df = df_continents[df_continents['Entity'] == selected_continent]
+df = df_continents.loc[df_continents['Entity'].isin(selected_continents)]
 fig2 = px.line(df, "Year", "Annual CO₂ emissions")
 
 selected_continents = st.multiselect('Select country or group', continents, continents)
@@ -68,7 +70,7 @@ elif chart == 'Continent Emissions':
 elif chart == 'Comparing continents':
     st.plotly_chart(fig3)
 
-st.set_page_config(layout="wide")
+
 
 st.title("A Simple CO2 Emissions Dashboard")
 st.write("An example of a Streamlit layout using a sidebar")
